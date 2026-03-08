@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title> Greenwich , NJ — Tidal Flooding Dashboard</title>
+  <title> Seaside Heights , NJ — Tidal Flooding Dashboard</title>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <!-- Leaflet (map) -->
@@ -921,8 +921,8 @@ a.brand *{
       </div>
 
       <div class="brandTitle">
-        <div class="kicker">USGS 01412150 ·  Greenwich , NJ</div>
-        <div class="name"> Greenwich  Tidal  Dashboard</div>
+        <div class="kicker">USGS 01408748 ·  Seaside Heights , NJ</div>
+        <div class="name"> Seaside Heights  Tidal  Dashboard</div>
       </div>
     </a>
 
@@ -1057,15 +1057,15 @@ a.brand *{
     <div class="stages" aria-label="Flood stages">
       <div class="stage">
         <div class="stageName">Minor</div>
-        <div class="badge" id="minorBadge" style="color:var(--minor)">7.20–8.20 ft</div>
+        <div class="badge" id="minorBadge" style="color:var(--minor)">3–4 ft</div>
       </div>
       <div class="stage">
         <div class="stageName">Moderate</div>
-        <div class="badge" id="moderateBadge" style="color:var(--moderate)">8.20–9.20 ft</div>
+        <div class="badge" id="moderateBadge" style="color:var(--moderate)">4–5 ft</div>
       </div>
       <div class="stage">
         <div class="stageName">Major</div>
-        <div class="badge" id="majorBadge" style="color:var(--major)">≥ 9.20 ft</div>
+        <div class="badge" id="majorBadge" style="color:var(--major)">≥ 5 ft</div>
       </div>
     </div>
   </div>
@@ -1304,7 +1304,7 @@ const DATUMS = ["MLLW", "NAVD88", "MSL", "MHHW"]; // cycle order
 // From  table (Gauge Zero row): datum = MLLW + offset
 const OFFSET_FROM_MLLW = {
   MLLW:   0.00,
-  NAVD88: -0.45,
+  NAVD88: -0.47,
   MSL:    -0.4,
   MHHW:   -0.8
 };
@@ -1414,22 +1414,22 @@ const ALERT_POINT={lat:39.2325, lon:-75.0380};
 
 /* Top ten list (MLLW) — FIXED (shifted +2.10 ft from NAVD) */
 const TOP_TEN_MLLW = [
-  {date:"10-29-2012", ft:11.73},
-  {date:"12-11-1992", ft:9.43},
-  {date:"08-28-2011", ft:8.42},
-  {date:"03-06-1962", ft:7.73},
-  {date:"03-13-2010", ft:7.45},
-  {date:"01-13-2024", ft:7.35},
-  {date:"10-27-2018", ft:7.30},
-  {date:"12-23-2022", ft:7.29},
-  {date:"02-02-2021", ft:7.26},
-  {date:"01-24-2017", ft:7.18}
+{date:"10-29-2012", ft:6.39},
+{date:"12-11-1992", ft:6.11},
+{date:"10-18-2009", ft:4.95},
+{date:"10-13-2025", ft:4.90},
+{date:"10-25-2005", ft:4.86},
+{date:"12-11-2003", ft:4.84},
+{date:"10-11-2019", ft:4.84},
+{date:"11-13-2009", ft:4.82},
+{date:"12-18-2023", ft:4.80},
+{date:"02-01-2021", ft:4.74}
 ];
 
     /* =========================
 MAP — Leaflet gauge map
 ========================= */
-const DEFAULT_GAUGE_ID = "01413038"; //  Greenwich  USGS
+const DEFAULT_GAUGE_ID = "01408748"; //  Seaside Heights  USGS
 const DEFAULT_GAUGE_ZOOM = 12;       // adjust if you want closer (13 = tighter)
 // Edit these whenever you want (lat/lon + label + link)
 const GAUGES = [
@@ -1522,7 +1522,7 @@ function ensureGaugeMap(){
     bounds.push([g.lat, g.lon]);
   }
 
-// Default view =  Greenwich  gauge
+// Default view =  Seaside Heights  gauge
 const def = GAUGES.find(g => String(g.id) === DEFAULT_GAUGE_ID);
 
 if(def){
